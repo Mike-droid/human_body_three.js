@@ -1,5 +1,6 @@
 import { useGLTF } from "@react-three/drei";
 import { useState } from "react";
+import { infoMuscles } from "./infoMuscles";
 
 export function Model(props) {
   const { nodes, materials } = useGLTF("/male_full_body-transformed.glb");
@@ -10,11 +11,12 @@ export function Model(props) {
   // Función auxiliar para no repetir código en cada mesh
   const renderMesh = (nodeName, materialName) => {
     const isHovered = hoveredObject === nodeName;
+    const hasInfo = !!infoMuscles[nodeName];
 
     return (
       <mesh
         geometry={nodes[nodeName].geometry}
-        // Si el mouse está encima, se pinta rojo; si no, usa su material original
+        // Si el mouse está encima, se pinta verde; si no, usa su material original
         material={
           isHovered ? materials[materialName].clone() : materials[materialName]
         }
@@ -23,12 +25,21 @@ export function Model(props) {
         // Eventos de interacción
         onPointerOver={(e) => {
           e.stopPropagation(); // Evita que se seleccionen objetos que están atrás
-          setHoveredObject(nodeName);
-          console.log(`👉 Estás tocando el objeto: ${nodeName}`);
+          if (hasInfo) {
+            setHoveredObject(nodeName);
+          }
+          document.body.style.cursor = "pointer";
         }}
         onPointerOut={(e) => {
           e.stopPropagation();
           setHoveredObject(null);
+          document.body.style.cursor = "auto";
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          if (props.onSelectMuscle) {
+            props.onSelectMuscle(nodeName);
+          }
         }}
       />
     );
