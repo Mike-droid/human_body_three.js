@@ -22,6 +22,12 @@ function App() {
             enableZoom={true}
             minDistance={50}
             maxDistance={200}
+            onStart={() => {
+              document.body.style.cursor = "move";
+            }}
+            onEnd={() => {
+              document.body.style.cursor = "auto";
+            }}
           />
         </Canvas>
       </div>
