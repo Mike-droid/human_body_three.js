@@ -47,22 +47,22 @@ export function Model(props) {
 
   return (
     <group {...props} dispose={null}>
-      {renderMesh("Object_3", "defaultMat_12")} // glutes
-      {renderMesh("Object_5", "defaultMat_11")} // shoulders
-      {renderMesh("Object_7", "defaultMat_10")} // calves
-      {renderMesh("Object_9", "defaultMat_9")} // hamstrings
-      {renderMesh("Object_11", "material_1")} // skeleton
-      {renderMesh("Object_13", "defaultMat_8")} // lats and traps
-      {renderMesh("Object_15", "defaultMat_7")} // face
-      {renderMesh("Object_17", "defaultMat_6")} // quads
-      {renderMesh("Object_19", "defaultMat_5")} // neck
-      {renderMesh("Object_21", "defaultMat_4")} // forearms tendons
-      {renderMesh("Object_23", "defaultMat_3")} // chest and abs
-      {renderMesh("Object_25", "defaultMat_2")} // tibialis
-      {renderMesh("Object_27", "defaultMat_1")} // groin or abductors
-      {renderMesh("Object_29", "material_0")} // skeleton
-      {renderMesh("Object_31", "defaultMat_0")} // forearms muscles
-      {renderMesh("Object_33", "defaultMat")} // biceps and triceps
+      {renderMesh("Object_3", "defaultMat_12")}   {/* glutes */}
+      {renderMesh("Object_5", "defaultMat_11")}   {/* shoulders */}
+      {renderMesh("Object_7", "defaultMat_10")}   {/* calves */}
+      {renderMesh("Object_9", "defaultMat_9")}    {/* hamstrings */}
+      {renderMesh("Object_11", "material_1")}     {/* skeleton */}
+      {renderMesh("Object_13", "defaultMat_8")}   {/* lats and traps */}
+      {renderMesh("Object_15", "defaultMat_7")}   {/* face */}
+      {renderMesh("Object_17", "defaultMat_6")}   {/* quads */}
+      {renderMesh("Object_19", "defaultMat_5")}   {/* neck */}
+      {renderMesh("Object_21", "defaultMat_4")}   {/* forearms tendons */}
+      {renderMesh("Object_23", "defaultMat_3")}   {/* chest and abs */}
+      {renderMesh("Object_25", "defaultMat_2")}   {/* tibialis */}
+      {renderMesh("Object_27", "defaultMat_1")}   {/* groin or abductors */}
+      {renderMesh("Object_29", "material_0")}     {/* skeleton */}
+      {renderMesh("Object_31", "defaultMat_0")}   {/* forearms muscles */}
+      {renderMesh("Object_33", "defaultMat")}     {/* biceps and triceps */}
     </group>
   );
 }
